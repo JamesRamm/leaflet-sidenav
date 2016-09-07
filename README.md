@@ -1,55 +1,30 @@
-# sidebar-v2
+# leaflet-sidenav
 
-A responsive sidebar for mapping libraries like [Leaflet](#leaflet) or [OpenLayers](#openlayers-3).
+A responsive sidenav for [Leaflet](#leaflet)
 
-It is more or less a successor of the [leaflet-sidebar](https://github.com/turbo87/leaflet-sidebar/) plugin, thus the `v2` suffix.
+<a href="https://flattr.com/submit/auto?user_id=turbo&url=https%3A%2F%2Fgithub.com%2FTurbo87%2Fsidenav-v2" target="_blank"><img src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
 
-<a href="https://flattr.com/submit/auto?user_id=turbo&url=https%3A%2F%2Fgithub.com%2FTurbo87%2Fsidebar-v2" target="_blank"><img src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
-
-![Demo](doc/sidebar-v2.gif)
+![Demo](doc/sidenav-v2.gif)
 
 
 ## [Leaflet](http://leafletjs.com/)
 
-![Sidebar collapsed](doc/leaflet-1.png) ![Sidebar extended](doc/leaflet-2.png)
+![sidenav collapsed](doc/leaflet-1.png) ![sidenav extended](doc/leaflet-2.png)
 
-Example code at [`examples/index.html`](examples/index.html) ([Preview](http://turbo87.github.io/sidebar-v2/examples/index.html))
-
-
-## [OpenLayers 3](http://openlayers.org/)
-
-![Sidebar collapsed](doc/ol3-1.png) ![Sidebar extended](doc/ol3-2.png)
-
-Example code at [`examples/ol3.html`](examples/ol3.html) ([Preview](http://turbo87.github.io/sidebar-v2/examples/ol3.html))
-
-
-## [OpenLayers 2](http://openlayers.org/two/)
-
-![Sidebar collapsed](doc/ol2-1.png) ![Sidebar extended](doc/ol2-2.png)
-
-Example code at [`examples/ol2.html`](examples/ol2.html) ([Preview](http://turbo87.github.io/sidebar-v2/examples/ol2.html))
-
-
-## [Google Maps](https://developers.google.com/maps/)
-
-![Sidebar collapsed](doc/gmaps-1.png) ![Sidebar extended](doc/gmaps-2.png)
-
-Example code at [`examples/gmaps.html`](examples/gmaps.html) ([Preview](http://turbo87.github.io/sidebar-v2/examples/gmaps.html))
-
+Example code at [`examples/index.html`](examples/index.html) ([Preview](http://turbo87.github.io/sidenav-v2/examples/index.html))
 
 ## Usage
 
 ### API
-sidebar-v2 provides a simple API to dynamically modify the sidebar. All functions may be chained.
+sidenav provides a simple API to dynamically modify the sidenav. All functions may be chained.
 
 #### creation
 ```js
-var sidebar = L.control.sidebar('sidebar').addTo(map); // leaflet version
-var sidebar = $('#sidebar').sidebar();                 // jquery version
+var sidenav = L.control.sidenav('sidenav').addTo(map);
 ```
 
 #### modification
-currently only available in leaflet :^(
+
 ```js
 /* add a new panel */
 var panelContent = {
@@ -58,32 +33,32 @@ var panelContent = {
     pane: someDomNode.innerHTML,        // DOM elements can be passed, too
     position: 'bottom'                  // vertical alignment, 'top' or 'bottom'
 };
-sidebar.addPanel(panelContent);
+sidenav.addPanel(panelContent);
 
 /* remove a panel */
-sidebar.removePanel('userinfo');
+sidenav.removePanel('userinfo');
 
 /* en- / disable a panel */
-sidebar.disablePanel('userinfo');
-sidebar.enablePanel('userinfo');
+sidenav.disablePanel('userinfo');
+sidenav.enablePanel('userinfo');
 ```
 
 #### open / close / show content
 ```js
 /* open a panel */
-sidebar.open('userinfo');
+sidenav.open('userinfo');
 
-/* close the sidebar */
-sidebar.close();
+/* close the sidenav */
+sidenav.close();
 ```
 
 ### markup
-If you use the sidebar with static content only, you can predefine content in HTML:
+If you use the sidenav with static content only, you can predefine content in HTML:
 
 ```html
-<div id="sidebar" class="sidebar collapsed">
+<div id="sidenav" class="sidenav collapsed">
     <!-- Nav tabs -->
-    <div class="sidebar-tabs">
+    <div class="sidenav-tabs">
         <ul role="tablist"> <!-- top aligned tabs -->
             <li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li>
             <li class="disabled"><a href="#messages" role="tab"><i class="fa fa-envelope"></i></a></li>
@@ -96,37 +71,37 @@ If you use the sidebar with static content only, you can predefine content in HT
     </div>
 
     <!-- Tab panes -->
-    <div class="sidebar-content">
-        <div class="sidebar-pane" id="home">
-            <h1 class="sidebar-header">
-                sidebar-v2
-                <div class="sidebar-close"><i class="fa fa-caret-left"></i></div>
+    <div class="sidenav-content">
+        <div class="sidenav-pane" id="home">
+            <h1 class="sidenav-header">
+                sidenav-v2
+                <div class="sidenav-close"><i class="fa fa-caret-left"></i></div>
             </h1>
-            <p>A responsive sidebar for mapping libraries</p>
+            <p>A responsive sidenav for mapping libraries</p>
         </div>
 
-        <div class="sidebar-pane" id="messages">
-            <h1 class="sidebar-header">Messages<div class="sidebar-close"><i class="fa fa-caret-left"></i></div></h1>
+        <div class="sidenav-pane" id="messages">
+            <h1 class="sidenav-header">Messages<div class="sidenav-close"><i class="fa fa-caret-left"></i></div></h1>
         </div>
 
-        <div class="sidebar-pane" id="profile">
-            <h1 class="sidebar-header">Profile<div class="sidebar-close"><i class="fa fa-caret-left"></i></div></h1>
+        <div class="sidenav-pane" id="profile">
+            <h1 class="sidenav-header">Profile<div class="sidenav-close"><i class="fa fa-caret-left"></i></div></h1>
         </div>
     </div>
 </div>
 ```
 
-You still need to initialize the sidebar (see API.creation)
+You still need to initialize the sidenav (see API.creation)
 
 ### Events
 
-The sidebar fires 3 types of events:
+The sidenav fires 3 types of events:
 `opening`, `closing`, and `content`.
 The latter has a payload including the id of the activated content div.
 
 You can listen for them like this:
 ```js
-sidebar.on('content', function(e) {
+sidenav.on('content', function(e) {
     // e.id contains the id of the opened panel
 })
 ```
@@ -134,4 +109,4 @@ sidebar.on('content', function(e) {
 
 ## License
 
-sidebar-v2 is free software, and may be redistributed under the [MIT license](LICENSE).
+sidenav is free software, and may be redistributed under the [MIT license](LICENSE).
