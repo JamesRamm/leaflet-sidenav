@@ -1,6 +1,6 @@
 {
   "name": "leaflet-sidenav",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A responsive sidenav for Leaflet",
   "homepage": "https://github.com/JamesRamm/leaflet-sidenav",
   "bugs": "https://github.com/JamesRamm/leaflet-sidenav/issues",
@@ -38,11 +38,13 @@
     "gulp-sass": "~0.7.2",
     "gulp-uglify": "~0.3.1",
     "gulp-zip": "~0.5.0",
-    "uglify-js": "*"
+    "uglify-js": "*",
+    "node-sass": "*"
   },
   "scripts": {
-    "sass": "sass scss/leaflet-sidenav.scss css/leaflet-sidenav.css",
+    "build-css": "node-sass --include-path scss scss/leaflet-sidenav.scss   css/leaflet-sidenav.css",
     "minifyjs": "uglifyjs js/leaflet-sidenav.js -o js/leaflet-sidenav.min.js",
-    "minifycss": "uglifyjs css/leaflet-sidenav.css -o css/leaflet-sidenav.min.css"
+    "minifycss": "uglifyjs css/leaflet-sidenav.css -o css/leaflet-sidenav.min.css",
+    "prepublish": "npm run build-css && npm run minifyjs && npm run minifycss"
   }
 }
