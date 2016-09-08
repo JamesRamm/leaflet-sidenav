@@ -2,16 +2,7 @@
 
 A responsive sidenav for [Leaflet](#leaflet)
 
-<a href="https://flattr.com/submit/auto?user_id=turbo&url=https%3A%2F%2Fgithub.com%2FTurbo87%2Fsidenav-v2" target="_blank"><img src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
-
-![Demo](doc/sidenav-v2.gif)
-
-
-## [Leaflet](http://leafletjs.com/)
-
-![sidenav collapsed](doc/leaflet-1.png) ![sidenav extended](doc/leaflet-2.png)
-
-Example code at [`examples/index.html`](examples/index.html) ([Preview](http://turbo87.github.io/sidenav-v2/examples/index.html))
+Example code at [`examples/index.html`](examples/index.html)
 
 ## Usage
 
