@@ -1,0 +1,85 @@
+$sidenav-margins: 10px;
+$sidenav-border-radius: 4px;
+$sidenav-touch-border: 2px solid rgba(0, 0, 0, 0.2);
+$sidenav-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+
+$tab-fg: #333;
+$tabs-bg: #fff;
+$tab-hover-fg: #000;
+$tab-hover-bg: #eee;
+$tab-active-fg: #fff;
+$tab-active-bg: #0074d9;
+
+@import 'base';
+
+.sidenav {
+    box-shadow: $sidenav-shadow;
+
+    &.leaflet-touch {
+        box-shadow: none;
+        border-right: $sidenav-touch-border;
+    }
+
+    @media(min-width:$threshold-sm) {
+        border-radius: $sidenav-border-radius;
+
+        &.leaflet-touch {
+            border: $sidenav-touch-border;
+        }
+    }
+}
+
+.sidenav-left {
+
+    & ~ .sidenav-map .leaflet-left {
+        @media(min-width:$threshold-sm) {
+            transition: left $sidenav-transition;
+        }
+
+        @media(min-width:$threshold-sm) and (max-width:$threshold-md - 1px) {
+            left: $width-sm + $sidenav-margins;
+        }
+
+        @media(min-width:$threshold-md) and (max-width:$threshold-lg - 1px) {
+            left: $width-md + $sidenav-margins;
+        }
+
+        @media(min-width:$threshold-lg) {
+            left: $width-lg + $sidenav-margins;
+        }
+    }
+
+    &.collapsed ~ .sidenav-map .leaflet-left {
+        @media(min-width:$threshold-sm) {
+            left: $tab-size + $sidenav-margins;
+        }
+    }
+}
+
+.sidenav-right {
+
+    & ~ .sidenav-map .leaflet-right {
+        @media(min-width:$threshold-sm) {
+            transition: right $sidenav-transition;
+        }
+
+        @media(min-width:$threshold-sm) and (max-width:$threshold-md - 1px) {
+            right: $width-sm + $sidenav-margins;
+        }
+
+        @media(min-width:$threshold-md) and (max-width:$threshold-lg - 1px) {
+            right: $width-md + $sidenav-margins;
+        }
+
+        @media(min-width:$threshold-lg) {
+            right: $width-lg + $sidenav-margins;
+        }
+    }
+
+    &.collapsed ~ .sidenav-map .leaflet-right {
+        @media(min-width:$threshold-sm) {
+            right: $tab-size + $sidenav-margins;
+        }
+    }
+}
+
