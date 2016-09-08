@@ -4,7 +4,7 @@
   "description": "A responsive sidenav for Leaflet",
   "homepage": "https://github.com/JamesRamm/leaflet-sidenav",
   "bugs": "https://github.com/JamesRamm/leaflet-sidenav/issues",
-  "main": "js/leaflet-sidenav.min.js"
+  "main": "js/leaflet-sidenav.min.js",
   "license": "MIT",
   "author": "Tobias Bieniek <tobias.bieniek@gmx.de>",
   "contributors": [{
