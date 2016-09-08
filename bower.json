@@ -1,5 +1,5 @@
 {
-  "name": "sidebar-v2",
+  "name": "leaflet-sidenav",
   "version": "0.3.0",
   "homepage": "https://github.com/Turbo87/sidebar-v2",
   "authors": [
@@ -7,12 +7,8 @@
   ],
   "description": "A responsive sidebar for mapping libraries like Leaflet or OpenLayers",
   "main": [
-    "css/gmaps-sidebar.js",
-    "css/leaflet-sidebar.js",
-    "css/ol2-sidebar.js",
-    "css/ol3-sidebar.js",
-    "js/jquery-sidebar.js",
-    "js/leaflet-sidebar.js"
+    "css/leaflet-sidenav.js",
+    "js/leaflet-sidenav.js"
   ],
   "keywords": [
     "gis",
