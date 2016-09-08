@@ -7,8 +7,8 @@ $width-md: 390px;
 $width-sm: 305px;
 $width-xs: 100%;
 
-$sidebar-z-index: 2000 !default;
-$sidebar-transition: 500ms !default;
+$sidenav-z-index: 2000 !default;
+$sidenav-transition: 500ms !default;
 
 $tab-size: 40px !default;
 $tab-font-size: 12pt !default;
@@ -24,7 +24,7 @@ $content-padding-horizontal: 20px !default;
 
 $move-map-in-xs: true !default;
 
-.sidebar {
+.sidenav {
     position: absolute;
 
     top: 0;
@@ -33,17 +33,17 @@ $move-map-in-xs: true !default;
 
     overflow: hidden;
 
-    z-index: $sidebar-z-index;
+    z-index: $sidenav-z-index;
 
     &.collapsed {
         width: $tab-size;
     }
 
     @media(min-width:$threshold-sm) {
-        top: $sidebar-margins;
-        bottom: $sidebar-margins;
+        top: $sidenav-margins;
+        bottom: $sidenav-margins;
 
-        transition: width $sidebar-transition;
+        transition: width $sidenav-transition;
     }
 
     @media(min-width:$threshold-sm) and (max-width:$threshold-md - 1px) {
@@ -59,32 +59,32 @@ $move-map-in-xs: true !default;
     }
 }
 
-.sidebar-left {
+.sidenav-left {
     left: 0;
 
     @media(min-width:$threshold-sm) {
-        left: $sidebar-margins;
+        left: $sidenav-margins;
     }
 }
 
-.sidebar-right {
+.sidenav-right {
     right: 0;
 
     @media(min-width:$threshold-sm) {
-        right: $sidebar-margins;
+        right: $sidenav-margins;
     }
 }
 
-.sidebar-tabs {
+.sidenav-tabs {
     top: 0;
     bottom: 0;
     height: 100%;
 
-    .sidebar-left & {
+    .sidenav-left & {
         left: 0;
     }
 
-    .sidebar-right & {
+    .sidenav-right & {
         right: 0;
     }
 
@@ -157,15 +157,15 @@ $move-map-in-xs: true !default;
     }
 }
 
-.sidebar-content {
+.sidenav-content {
     position: absolute;
 
-    .sidebar-left & {
+    .sidenav-left & {
         left: $tab-size;
         right: 0;
     }
 
-    .sidebar-right & {
+    .sidenav-right & {
         left: 0;
         right: $tab-size;
     }
@@ -178,12 +178,12 @@ $move-map-in-xs: true !default;
     overflow-x: hidden;
     overflow-y: auto;
 
-    .sidebar.collapsed > & {
+    .sidenav.collapsed > & {
         overflow-y: hidden;
     }
 }
 
-.sidebar-pane {
+.sidenav-pane {
     display: none;
 
     left: 0;
@@ -209,7 +209,7 @@ $move-map-in-xs: true !default;
     }
 }
 
-.sidebar-header {
+.sidenav-header {
     margin: (-$content-padding-vertical) (-$content-padding-horizontal) 0;
     height: $tab-size;
     padding: 0 $content-padding-horizontal;
@@ -218,12 +218,12 @@ $move-map-in-xs: true !default;
     color: $header-fg;
     background-color: $header-bg;
 
-    .sidebar-right & {
+    .sidenav-right & {
         padding-left: $tab-size;
     }
 }
 
-.sidebar-close {
+.sidenav-close {
     position: absolute;
     top: 0;
     width: $tab-size;
@@ -231,17 +231,17 @@ $move-map-in-xs: true !default;
     text-align: center;
     cursor: pointer;
 
-    .sidebar-left & {
+    .sidenav-left & {
         right: 0;
     }
 
-    .sidebar-right & {
+    .sidenav-right & {
         left: 0;
     }
 }
 
 @if $move-map-in-xs {
-    .sidebar-left ~ .sidebar-map {
+    .sidenav-left ~ .sidenav-map {
         margin-left: $tab-size;
 
         @media(min-width:$threshold-sm) {
@@ -249,7 +249,7 @@ $move-map-in-xs: true !default;
         }
     }
 
-    .sidebar-right ~ .sidebar-map {
+    .sidenav-right ~ .sidenav-map {
         margin-right: $tab-size;
 
         @media(min-width:$threshold-sm) {

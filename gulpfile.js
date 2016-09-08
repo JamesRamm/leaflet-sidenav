@@ -13,7 +13,7 @@ var basename = pkg.name + '-' + pkg.version;
 
 // SASS compilation
 gulp.task('sass', function () {
-    gulp.src('scss/*sidebar.scss')
+    gulp.src('scss/*sidenav.scss')
         .pipe(sass({
           sourceComments: 'map'
         }))
@@ -24,13 +24,13 @@ gulp.task('sass', function () {
 gulp.task('lint', ['lint:js', 'lint:css']);
 
 gulp.task('lint:js', function() {
-  return gulp.src('js/*sidebar.js')
+  return gulp.src('js/*sidenav.js')
     .pipe(jshint())
     .pipe(jshint.reporter());
 });
 
 gulp.task('lint:css', ['sass'], function() {
-  return gulp.src('css/*sidebar.css')
+  return gulp.src('css/*sidenav.css')
     .pipe(csslint({
       'adjoining-classes': false,
       'box-sizing': false,
@@ -45,14 +45,14 @@ gulp.task('lint:css', ['sass'], function() {
 gulp.task('minify', ['minify:js', 'minify:css']);
 
 gulp.task('minify:js', function() {
-  return gulp.src('js/*sidebar.js')
+  return gulp.src('js/*sidenav.js')
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
     .pipe(gulp.dest('js'));
 });
 
 gulp.task('minify:css', ['sass'], function() {
-  return gulp.src('css/*sidebar.css')
+  return gulp.src('css/*sidenav.css')
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifyCSS())
     .pipe(gulp.dest('css'));
@@ -63,8 +63,8 @@ gulp.task('zip', ['minify'], function() {
   return gulp.src([
     'README.md',
     'LICENSE',
-    'css/*-sidebar.min.css',
-    'js/*-sidebar.min.js',
+    'css/*-sidenav.min.css',
+    'js/*-sidenav.min.js',
   ])
   .pipe(rename(function (path) {
     path.dirname = '';
