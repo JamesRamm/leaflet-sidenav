@@ -2,19 +2,23 @@
 
 A responsive sidenav for [Leaflet](#leaflet)
 
-Example code at [`examples/index.html`](examples/index.html)
+## Install
+
+    npm install leaflet-sidenav
 
 ## Usage
 
-### API
-sidenav provides a simple API to dynamically modify the sidenav. All functions may be chained.
+Example code at [`examples/index.html`](examples/index.html)
 
-#### creation
+### API
+Leaflet-sidenav provides a simple API to dynamically modify the sidenav. All functions may be chained.
+
+#### Create a new nav
 ```js
-var sidenav = L.control.sidenav('sidenav').addTo(map);
+var sidenav = L.control.sidenav('sidenav', {'position': 'left'}).addTo(map);
 ```
 
-#### modification
+#### Modify a nav
 
 ```js
 /* add a new panel */
