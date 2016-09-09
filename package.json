@@ -1,6 +1,6 @@
 {
   "name": "leaflet-sidenav",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "A responsive sidenav for Leaflet",
   "homepage": "https://github.com/JamesRamm/leaflet-sidenav",
   "bugs": "https://github.com/JamesRamm/leaflet-sidenav/issues",
@@ -30,7 +30,8 @@
   "devDependencies": {
     "jslint": ">=0.10.3",
     "uglify-js": "*",
-    "node-sass": "*"
+    "node-sass": "*",
+    "clean-css": "*"
   },
   "scripts": {
     "lint": "jslint js/leaflet-sidenav.js",
