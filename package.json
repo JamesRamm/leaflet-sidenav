@@ -4,7 +4,7 @@
   "description": "A responsive sidenav for Leaflet",
   "homepage": "https://github.com/JamesRamm/leaflet-sidenav",
   "bugs": "https://github.com/JamesRamm/leaflet-sidenav/issues",
-  "main": "js/leaflet-sidenav.min.js",
+  "main": "dist/leaflet-sidenav.min.js",
   "license": "MIT",
   "author": "Tobias Bieniek <tobias.bieniek@gmx.de>",
   "contributors": [{
@@ -34,9 +34,9 @@
   },
   "scripts": {
     "lint": "jslint js/leaflet-sidenav.js",
-    "build-css": "node-sass --include-path scss scss/leaflet-sidenav.scss   scss/leaflet-sidenav.css",
+    "build-css": "node-sass --include-path scss scss/leaflet-sidenav.scss dist/leaflet-sidenav.css",
     "minifyjs": "uglifyjs js/leaflet-sidenav.js -o dist/leaflet-sidenav.min.js",
-    "minifycss": "uglifyjs scss/leaflet-sidenav.css -o dist/leaflet-sidenav.min.css",
+    "minifycss": "cleancss -o dist/leaflet-sidenav.min.css dist/leaflet-sidenav.css",
     "prepublish": "npm run build-css && npm run minifyjs && npm run minifycss"
   }
 }
