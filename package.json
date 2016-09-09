@@ -33,7 +33,7 @@
     "node-sass": "*"
   },
   "scripts": {
-    "lint": "jslint js/leaflet-sidenav.js"
+    "lint": "jslint js/leaflet-sidenav.js",
     "build-css": "node-sass --include-path scss scss/leaflet-sidenav.scss   scss/leaflet-sidenav.css",
     "minifyjs": "uglifyjs js/leaflet-sidenav.js -o dist/leaflet-sidenav.min.js",
     "minifycss": "uglifyjs scss/leaflet-sidenav.css -o dist/leaflet-sidenav.min.css",
