@@ -209,7 +209,7 @@ L.Control.Sidenav = L.Control.extend({
      *                                       on the top or the bottom of the sidenav. 'top' or 'bottom'
      * @param {HTMLString} {DOMnode} [data.tab]  content of the tab item, as HTMLstring or DOM node
      * @param {HTMLString} {DOMnode} [data.pane] content of the panel, as HTMLstring or DOM node
-     * @param {String} [data.title] The title of the panel. If not set, no header will be created.
+     * @param {String} [data.header] The header of the panel. If not set, no header will be created.
      *
      * @returns {L.Control.Sidenav}
      */
@@ -217,9 +217,9 @@ L.Control.Sidenav = L.Control.extend({
         var i, pane, tab, tabHref, closeButtons;
         
         // Create header node
-        if (typeof data.title !== "undefined"){
+        if (typeof data.header !== "undefined"){
             header = L.DomUtil.create('h1', 'sidenav-header', pane);
-            header.innerHTML = data.title + '<div class="sidenav-close"><i class="fa fa-caret-left"></i></div>'
+            header.innerHTML = data.header
         }
 
         // Create pane node
