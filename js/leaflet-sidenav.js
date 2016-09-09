@@ -416,3 +416,4 @@ L.Control.Sidenav = L.Control.extend({
 L.control.sidenav = function(id, options) {
     return new L.Control.Sidenav(id, options);
 };
+
