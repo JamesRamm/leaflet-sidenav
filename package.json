@@ -30,7 +30,8 @@
   "devDependencies": {
     "jslint": ">=0.10.3",
     "uglify-js": "*",
-    "node-sass": "*"
+    "node-sass": "*",
+    "clean-css": "*"
   },
   "scripts": {
     "lint": "jslint js/leaflet-sidenav.js",
