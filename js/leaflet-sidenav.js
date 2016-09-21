@@ -144,7 +144,6 @@ L.Control.Sidenav = L.Control.extend({
             child = this._panes[i];
             if (child.id === id){
                 L.DomUtil.addClass(child, 'active');
-                tab.querySelector('a').tooltip("hide");
             }
             else if (L.DomUtil.hasClass(child, 'active')){
                 L.DomUtil.removeClass(child, 'active');
