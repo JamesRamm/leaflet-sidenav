@@ -142,11 +142,13 @@ L.Control.Sidenav = L.Control.extend({
         // Hide old active contents and show new content
         for (i = 0; i < this._panes.length; i++) {
             child = this._panes[i];
-            if (child.id === id)
+            if (child.id === id){
                 L.DomUtil.addClass(child, 'active');
-                child.querySelector('a').tooltip("hide")
-            else if (L.DomUtil.hasClass(child, 'active'))
+                tab.querySelector('a').tooltip("hide");
+            }
+            else if (L.DomUtil.hasClass(child, 'active')){
                 L.DomUtil.removeClass(child, 'active');
+            }
         }
 
         // Remove old active highlights and set new highlight
